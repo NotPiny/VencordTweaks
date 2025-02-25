@@ -5,13 +5,6 @@ setlocal
 
 :: == BELOW IS AI GENERATED ==
 
-:: Check if running as administrator
-net session >nul 2>&1
-if %errorLevel% neq 0 (
-    echo This only works as administrator lmao
-    exit /b 1
-)
-
 :: Download and install nvm
 curl -o install_nvm.bat https://raw.githubusercontent.com/coreybutler/nvm-windows/master/nvm-setup.zip
 start /wait install_nvm.bat

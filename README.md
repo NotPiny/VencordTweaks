@@ -20,8 +20,8 @@ You can also add your own plugins to the plugins.map file. using the following f
 *These are required for the vencord build process but the script may install them for you (if my code works).
 
 ## Platforms
-This was built for Linux Mint 21.3 and has been tested on Ubuntu (20.04 i think). It should work on any debian based system. It may work on other systems but I have not tested it.<br/>
+This was built for Linux Mint 21.3 and has been tested on Ubuntu (20.04 i think) + Arch Linux. It should work on any debian based system. It may work on other systems but I have not tested it.<br/>
 
 **Install methods:**<br/>
-Unix: install.sh<br/>
-Windows: install.bat
+Unix: install.sh (**MUST** be run via sudo su otherwise it breaks 🤷🏻)<br/>
+Windows: install.bat - Experimental
