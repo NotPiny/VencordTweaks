@@ -10,8 +10,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-npm install -g pnpm
-
+npm install -g pnpm@10.4.1
 # Get rid of old files
 echo "Removing old files..."
 rm -rf ./remote/

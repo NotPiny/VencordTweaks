@@ -7,6 +7,8 @@ fs.rmSync(path.resolve(__dirname, '../overrides/src/userplugins'), { recursive: 
 if (!fs.existsSync('./tmp')) fs.mkdirSync(`./tmp`)
 plugins.forEach(plugin => {
     if (plugin == '') return; // Skip empty lines
+    if (plugin.startsWith('#')) return; // Allow commenting out plugins
+
     // Plugin looks like: "src/userplugins/Quoter;https://github.com/cheesesamwich/Tobleronecord.git;/src/tobleroneplugins/Quoter"
     // So we split it by the semicolon
     // 0: src/userplugins/Quoter - The path to the destination in the overrides folder
