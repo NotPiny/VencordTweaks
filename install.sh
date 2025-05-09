@@ -39,12 +39,19 @@ cp -r ../overrides/* ./
 echo "Building the project..."
 pnpm build
 
+echo "Building the project for web..."
+pnpm buildWeb
+
 # Inject into the client
 echo "Injecting into the client..."
 pnpm inject
 
 # Change file ownership of remote to the user who ran the script
 chown -hR $SUDO_USER .
+
+echo "Moving web files to main directory"
+mv dist/extension-chrome.zip ../output/
+mv dist/extension-firefox.zip ../output/
 
 # Finished
 echo "Finished installing. Feel free to close this terminal or run 'exit' to return to your normal shell"
