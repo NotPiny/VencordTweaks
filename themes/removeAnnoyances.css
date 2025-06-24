@@ -1,0 +1,33 @@
+/* Discovery */
+*[data-list-id=guildsnav] div[class^=footer_] {
+    display: none;
+}
+
+/* Play again (May be removed, unsure) */
+.container__675e5 {
+    display: none;
+}
+
+/* Application launcher */
+button[aria-label=Apps] {
+    display: none;
+}
+
+/* Big blue commands / launch button */
+div[class^=entryPointButtonContainer_] {
+    display: none;
+}
+
+/* Gift button */
+button[aria-label="Send a gift"] {
+    display: none;
+}
+
+/* Gif and sticker buttons as they are also submenus of emoji */
+div.expression-picker-chat-input-button:has(button[aria-label="Open GIF picker"]) {
+    display: none;
+}
+
+div.expression-picker-chat-input-button:has(button[aria-label="Open sticker picker"]) {
+    display: none;
+}
