@@ -1,0 +1,131 @@
+/* 
+Welcome to my quickCss, It's made up of a few custom things and a couple of other peoples things.
+Where possible i have simply imported other peoples code however where a link wasn't provided i simply copy and pasted yet with clear source links
+*/
+
+@import url('https://cdn.jsdelivr.net/gh/NotPiny/VencordTweaks/themes/removeAnnoyances.css');
+@import url('https://raw.githubusercontent.com/surgedevs/visual-refresh-compact-title-bar/refs/heads/main/desktop.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+/* Change fonts */
+:root {
+    --font-primary: Lexend, Roboto, Whitney, 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-header: Roboto, Whitney, 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* 
+Hide Mee6 pfp, They we're doing this thing where they put a fake ping the the bots pfp, and as such i have decided to simply hide their profile picture
+*/
+img[src^="https://cdn.discordapp.com/avatars/159985870458322944"] {
+    /* Comment if outright hiding (Does funky colour effect allow for easy identification still) */
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(https://cdn.discordapp.com/embed/avatars/0.png) no-repeat !important;
+    width: 32px;
+    height: 32px;
+    padding-left: 32px;
+    /* Uncomment to outright hide it */
+    /* display: none; */
+}
+
+/* 
+Make open folder backgrounds less annoying, I don't actually remember the specifics of how much this does i just was annoyed by the new change so i modifed it.
+*/
+div.isExpanded__48112 span[class^=folderGroupBackground__] {
+  --custom-folder-background: color-mix(in srgb,var(--custom-folder-color),transparent 95%);
+  background-color: var(--custom-folder-background,var(--bg-mod-subtle));
+  opacity: 1;
+}
+
+/*
+    UNORIGINAL CODE - CHECK OUT THE SOURCES
+*/
+
+/* 
+Compact user widget, I will say this one is a bit buggy when quests are being promoted.
+Source: https://discord.com/channels/1015060230222131221/1355972939031249240/1358732454944313425
+*/
+.panels_c48ade {
+  left: .45rem!important;
+  height: 57px!important;
+  width: 56px!important;
+  border-radius: 30px!important;
+  display: flex!important;
+  flex-direction: column;
+  overflow: hidden;
+  transition-duration: 0.35s;
+  z-index: 50000;
+  pointer-events: all;
+  border: 1px solid var(--border-subtle)!important;
+ &:has(.container_e131a9) {
+  border: 1px solid var(--border-normal);
+ }
+}
+
+.wrapper_e131a9 {
+  height: 0;
+  overflow: hidden;
+  
+}
+
+.panels_c48ade:hover {
+  width: 300px!important;
+  height: auto!important;
+  display: flex!important;
+  flex-direction: column;
+  border-radius: 15px!important;
+  filter: drop-shadow(7px 7px 7px rgba(0, 0, 0, 0.123)) ;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  .wrapper_e131a9 {
+    height: auto!important;
+  }
+}
+.sidebar_c48ade {
+  overflow: visible!important;
+}
+.container__2637a {
+  padding-bottom: 0px!important;
+}
+.scroller__99e7c {
+  margin-bottom: 0px!important;
+}
+.bottom__7aaec {
+  bottom: 0px!important;
+}
+
+
+.visual-refresh [class^="panels_"] [class^="container__"] [class^="buttons__"] {
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: left;
+  transition: opacity 0.1s ease-in, transform 0.1s ease-in;
+  will-change: opacity, transform;
+}
+
+.visual-refresh [class^="panels_"]:hover [class^="container__"] [class^="buttons__"] {
+
+  transform: scale(1);
+  
+  opacity: 1;
+}
+
+.visual-refresh .panel__5dec7 {
+  display: none;
+}
+
+.visual-refresh [class^="panels_"]:hover .panel__5dec7 {
+  display: block;
+}
+
+/* 
+REMOVE QUICK REACT BAR 
+Source: https://discord.com/channels/1015060230222131221/1026515880080842772/1334797375469781024
+*/
+.button_f7ecac.hoverBarButton_f84418:nth-of-type(1),
+.button_f7ecac.hoverBarButton_f84418:nth-of-type(2),
+.button_f7ecac.hoverBarButton_f84418:nth-of-type(3),
+.separator_f84418 {
+   display: none;
+}
