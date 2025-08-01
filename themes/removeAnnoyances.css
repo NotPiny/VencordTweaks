@@ -19,15 +19,15 @@ div[class^=entryPointButtonContainer_] {
 }
 
 /* Gift button */
-button[aria-label="Send a gift"] {
+div[aria-label="Send a gift"] {
     display: none;
 }
 
 /* Gif and sticker buttons as they are also submenus of emoji */
-div.expression-picker-chat-input-button:has(button[aria-label="Open GIF picker"]) {
+div.expression-picker-chat-input-button:has(div[aria-label="Open GIF picker"]) {
     display: none;
 }
 
-div.expression-picker-chat-input-button:has(button[aria-label="Open sticker picker"]) {
+div.expression-picker-chat-input-button:has(div[aria-label="Open sticker picker"]) {
     display: none;
 }
