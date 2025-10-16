@@ -31,13 +31,22 @@ img[src^="https://cdn.discordapp.com/avatars/159985870458322944"] {
 }
 
 /* 
-Make open folder backgrounds less annoying, I don't actually remember the specifics of how much this does i just was annoyed by the new change so i modifed it.
+Make open folder backgrounds less annoying, I don't actually remember the specifics of how much this does i just was annoyed by the new change so i modified it.
 */
 div.isExpanded__48112 span[class^=folderGroupBackground__] {
   --custom-folder-background: color-mix(in srgb,var(--custom-folder-color),transparent 95%);
   background-color: var(--custom-folder-background,var(--bg-mod-subtle));
   opacity: 1;
 }
+
+/**
+Remove quick reacts
+*/
+div[aria-label^="Click to react with "] {
+    display: none;
+} /* Remove the actual reactions */
+
+div[class^="buttonsInner_"] :nth-child(7) {display: none;} /* Remove the seperator */
 
 /*
     UNORIGINAL CODE - CHECK OUT THE SOURCES
@@ -117,15 +126,4 @@ Source: https://discord.com/channels/1015060230222131221/1355972939031249240/135
 
 .visual-refresh [class^="panels_"]:hover .panel__5dec7 {
   display: block;
-}
-
-/* 
-REMOVE QUICK REACT BAR 
-Source: https://discord.com/channels/1015060230222131221/1026515880080842772/1334797375469781024
-*/
-.button_f7ecac.hoverBarButton_f84418:nth-of-type(1),
-.button_f7ecac.hoverBarButton_f84418:nth-of-type(2),
-.button_f7ecac.hoverBarButton_f84418:nth-of-type(3),
-.separator_f84418 {
-   display: none;
 }
